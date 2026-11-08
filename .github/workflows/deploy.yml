@@ -32,7 +32,7 @@ jobs:
         run: npm run build
         env:
           VITE_SUPABASE_URL: https://fhljuvvueszbvylsucgb.supabase.co
-          VITE_SUPABASE_PUBLISHABLE_KEY: ${{ vars.VITE_SUPABASE_PUBLISHABLE_KEY }}
+          VITE_SUPABASE_PUBLISHABLE_KEY: sb_publishable_OdI1m0V9O7UcP9c8ctR7EA_JBqzf72r
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
         with:
