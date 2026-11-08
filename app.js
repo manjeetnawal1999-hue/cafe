@@ -58,10 +58,10 @@ document.getElementById('booking-form').addEventListener('submit', async event =
       full_name: values.full_name, phone: values.phone, email: values.email,
       booking_date: values.booking_date, booking_time: values.booking_time,
       guests: Number(values.guests), special_requests: values.special_requests
-    }).select('reference_code').single();
+    });
     if (error) throw error;
     form.reset(); dateInput.min = localToday;
-    setStatus('booking-status', `Thank you! Your request ${data?.reference_code ? '('+data.reference_code+') ' : ''}has been received. Our team will contact you to confirm your table.`);
+    setStatus('booking-status', 'Thank you! Your booking request has been received. Our team will contact you to confirm your table.');
   } catch (err) {
     console.error(err); setStatus('booking-status','We could not send your request right now. Please call +91 1234567890.',true);
   } finally { button.disabled = false; button.innerHTML = 'Request my table <span>↗</span>'; }
