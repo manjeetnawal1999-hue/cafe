@@ -1,0 +1,24 @@
+name: CABIN CAFE build verification
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install dependencies
+        run: npm install
+      - name: Build website
+        run: npm run build
+        env:
+          VITE_SUPABASE_URL: https://fhljuvvueszbvylsucgb.supabase.co
+          VITE_SUPABASE_PUBLISHABLE_KEY: sb_publishable_OdI1m0V9O7UcP9c8ctR7EA_JBqzf72r
