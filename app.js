@@ -1,4 +1,4 @@
-import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+import { createClient } from '@supabase/supabase-js';
 
 // The publishable key is intended for browser use. Database writes are restricted by RLS.
 const SUPABASE_URL = import.meta.env?.VITE_SUPABASE_URL || 'https://fhljuvvueszbvylsucgb.supabase.co';
