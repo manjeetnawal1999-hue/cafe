@@ -1,7 +1,8 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 
-const SUPABASE_URL = import.meta.env?.VITE_SUPABASE_URL || '';
-const SUPABASE_KEY = import.meta.env?.VITE_SUPABASE_PUBLISHABLE_KEY || '';
+// The publishable key is intended for browser use. Database writes are restricted by RLS.
+const SUPABASE_URL = import.meta.env?.VITE_SUPABASE_URL || 'https://fhljuvvueszbvylsucgb.supabase.co';
+const SUPABASE_KEY = import.meta.env?.VITE_SUPABASE_PUBLISHABLE_KEY || 'sb_publishable_OdI1m0V9O7UcP9c8ctR7EA_JBqzf72r';
 const supabase = SUPABASE_URL && SUPABASE_KEY ? createClient(SUPABASE_URL, SUPABASE_KEY) : null;
 
 const nav = document.querySelector('.nav');
