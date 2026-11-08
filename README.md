@@ -21,11 +21,9 @@ Run `supabase/schema.sql` in the Supabase SQL Editor. It creates:
 RLS is enabled. The public anonymous role can INSERT only; it cannot SELECT, UPDATE or DELETE customer records. Do not put a Supabase service-role/secret key in the frontend.
 
 ## Deploy
-Push to GitHub, then configure GitHub Pages (or another static host) to deploy the Vite `dist` directory. Add these repository Actions secrets or Pages build environment variables:
-- `VITE_SUPABASE_URL`
-- `VITE_SUPABASE_PUBLISHABLE_KEY`
+A GitHub Actions workflow is included at `.github/workflows/deploy.yml`. It builds the Vite `dist` directory with the linked Supabase project URL and publishable key, then deploys it to GitHub Pages on every push to `main`.
 
-The GitHub Actions workflow builds the site and publishes it to Pages.
+In GitHub, open **Settings → Pages** and set **Build and deployment → Source** to **GitHub Actions**. The publishable key is designed for browser use; database access is restricted by the RLS policies above. Never use a service-role or secret key in this site.
 
 ## Business details to customize
 - Phone: +91 1234567890
